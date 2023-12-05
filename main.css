@@ -71,6 +71,7 @@ header#header {
 
 #showcase {
   padding: 3rem 5rem;
+  position: relative;
 }
 
 #showcase .card-wrapper .card {
@@ -104,6 +105,32 @@ header#header {
 #showcase .card-wrapper .card h1:hover {
   text-decoration: underline;
   cursor: pointer;
+}
+
+#showcase .card-wrapper > a p {
+  position: absolute;
+  bottom: 1rem;
+  right: 0;
+}
+
+#showcase .card-wrapper > a p span {
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+#showcase .card-wrapper > a p i {
+  margin-left: 1rem;
+  padding: 1.5rem;
+  font-size: 22px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid #837e7e;
+}
+
+#showcase .card-wrapper > a i:hover {
+  background-color: #171313;
+  color: #fff;
 }
 
 /*                             releases                        */
@@ -635,6 +662,21 @@ section#email {
     width: 100%;
   }
 
+  #showcase .card-wrapper > a p {
+    bottom: 0;
+  }
+
+  #showcase .card-wrapper > a p span {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  #showcase .card-wrapper > a p i {
+    margin-left: 0.5rem;
+    padding: 1rem;
+    font-size: 22px;
+  }
+
   /*                             release                         */
   #releases .card-wrapper {
     display: grid;
@@ -794,7 +836,7 @@ section#email {
   }
 
   #showcase .card-wrapper .card .card-left {
-    margin-top: 5rem;
+    margin-top: 3rem;
   }
 
   #showcase .card-wrapper .card img {
@@ -809,6 +851,21 @@ section#email {
   #showcase .card-wrapper .card h1 {
     font-size: 28px;
     width: 100%;
+  }
+
+  #showcase .card-wrapper > a p {
+    bottom: 0;
+  }
+
+  #showcase .card-wrapper > a p span {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  #showcase .card-wrapper > a p i {
+    margin-left: 0.5rem;
+    padding: 1rem;
+    font-size: 22px;
   }
 
   /*                           release                       */
@@ -970,7 +1027,7 @@ section#email {
     justify-content: space-between;
   }
 
-	#footer .md .footer-media {
-		display: none;
-	}
+  #footer .md .footer-media {
+    display: none;
+  }
 }
