@@ -1,0 +1,976 @@
+* {
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/*                                header                               */
+header#header {
+  padding: 20px 5%;
+  background-color: rgb(164, 201, 216);
+  /* height: 100vh; */
+}
+
+#navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#navbar .nav-list {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#navbar .nav-list li a {
+  color: rgb(23, 18, 18);
+  font-weight: 700;
+  position: relative;
+}
+
+#navbar .nav-list li a::after {
+  content: "";
+  background: rgb(23, 18, 18);
+  height: 4px;
+  width: 0;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transition: 0.3s all;
+}
+
+#navbar .nav-list li a:hover {
+  color: rgba(23, 18, 18, 0.6);
+}
+
+#navbar .nav-list li a:hover::after {
+  background: rgb(23, 18, 18, 0.6);
+  width: 4px;
+}
+
+#showcase {
+  padding: 3rem 5rem;
+}
+
+#showcase .card-wrapper .card {
+  background-color: transparent;
+  min-height: 90vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  border: none;
+}
+
+#showcase .card-wrapper .card img {
+  width: 110%;
+  height: 150%;
+  cursor: pointer;
+}
+
+#showcase .card-wrapper .card h5 {
+  font-size: 14px;
+  color: #171313;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+#showcase .card-wrapper .card h1 {
+  font-size: 52px;
+  font-weight: 700;
+  width: 500px;
+}
+
+#showcase .card-wrapper .card h1:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/*                             releases                        */
+#releases {
+  padding: 3rem 5%;
+  position: relative;
+}
+
+#releases h2 {
+  font-size: 32px;
+  color: #171313;
+  font-weight: 800;
+  margin-bottom: 2rem;
+}
+
+#releases .card-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1.5rem;
+}
+
+#releases .card-wrapper .card {
+  border: none;
+}
+
+#releases .card-wrapper .card img {
+  cursor: pointer;
+}
+
+#releases .card h4 {
+  margin-top: 1rem;
+  width: fit-content;
+  display: inline-block;
+  font-size: 14px;
+  background-color: rgb(23, 18, 18);
+  padding: 5px;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+#releases .card h4:hover {
+  background-color: rgba(23, 18, 18, 0.4);
+}
+
+#releases .card h3 {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+#releases .card h3:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#releases > span {
+  position: absolute;
+  top: 3rem;
+  right: 5%;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#releases > span::after {
+  content: "";
+  width: 0;
+  height: 1px;
+  background-color: #171313;
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+}
+
+#releases > span::before {
+  content: "";
+  width: 0;
+  height: 1px;
+  background-color: #171313;
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  transition: 0.3s all ease-out;
+}
+
+#releases > span:hover::after,
+#releases > span:hover::before {
+  width: 80%;
+}
+
+#releases > span i {
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+#releases > span i:hover {
+  background-color: #171313;
+  color: #fff;
+}
+
+/*                             spotlight                        */
+#spotlight {
+  padding: 3rem 5%;
+  position: relative;
+}
+
+#spotlight h3 {
+  font-weight: 800;
+}
+
+#spotlight h2 {
+  font-weight: 600;
+  font-size: 28px;
+}
+
+#spotlight > span {
+  position: absolute;
+  top: 3rem;
+  right: 5%;
+  text-transform: uppercase;
+  font-weight: 7 00;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#spotlight > span::after {
+  content: "";
+  width: 0;
+  height: 1px;
+  background-color: #171313;
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+}
+
+#spotlight > span::before {
+  content: "";
+  width: 0;
+  height: 1px;
+  background-color: #171313;
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  transition: 0.3s all ease-out;
+}
+
+#spotlight > span:hover::after,
+#spotlight > span:hover::before {
+  width: 80%;
+}
+
+#spotlight > span i {
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+#spotlight > span i:hover {
+  background-color: #171313;
+  color: #fff;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.swiper-container {
+  width: 100%;
+  margin: 20px auto;
+}
+
+.swiper-slide {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-slide-content {
+  padding: 20px;
+}
+
+.swiper-slide .layer {
+  width: 70%;
+  height: 0;
+  background-color: #171313;
+  color: #fff;
+  border-radius: 10px;
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 40px;
+  text-align: center;
+  font-size: 14px;
+  transition: all 0.5s;
+}
+
+.swiper-slide:hover .layer {
+  height: 50%;
+}
+
+/*                             emails                          */
+section#email {
+  background-color: #171313;
+  color: #fff;
+  padding: 5rem 5% 5rem;
+}
+
+.email-title {
+  width: 800px;
+}
+
+.email-title h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+.email-form {
+  margin-top: 15rem;
+  padding-left: 60%;
+}
+
+.email-form form {
+  border-bottom: 2px solid #fff;
+  padding-bottom: 10px;
+  width: 100%;
+  background-color: transparent;
+}
+
+.email-form form input {
+  outline: none;
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  color: #fff;
+  width: 90%;
+  padding-right: 2rem;
+}
+
+.email-form form button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.email-form #successMessage {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.email-form form label {
+  background-color: transparent;
+}
+
+.email-form form input::placeholder {
+  color: #fff;
+}
+
+.email-form p.text {
+  color: #837e7e;
+  font-size: 14px;
+  margin-top: 8rem;
+}
+
+/*                             tools                            */
+#tools {
+  padding: 3rem 5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+#tools .card-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+#tools .card-wrapper .card {
+  border: 0;
+}
+
+#tools .card-wrapper .card img {
+  cursor: pointer;
+}
+
+#tools .card h4 {
+  margin-top: 1rem;
+  width: fit-content;
+  display: inline-block;
+  font-size: 14px;
+  background-color: rgb(23, 18, 18);
+  padding: 5px;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+#tools .card h4:hover {
+  background-color: rgba(23, 18, 18, 0.4);
+}
+
+#tools .card h3 {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+#tools .card h3:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#tools .tools-left,
+#tools .tools-right {
+  position: relative;
+}
+
+#tools .tools-left span,
+#tools .tools-right span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#tools .tools-left span::after,
+#tools .tools-right span::after {
+  content: "";
+  width: 0;
+  height: 1px;
+  background-color: #171313;
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+}
+
+#tools .tools-left span::before,
+#tools .tools-right span::before {
+  content: "";
+  width: 0;
+  height: 1px;
+  background-color: #171313;
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  transition: 0.3s all ease-out;
+}
+
+#tools .tools-left span:hover::after,
+#tools .tools-right span:hover::after,
+#tools .tools-left span:hover::before,
+#tools .tools-right span:hover::before {
+  width: 80%;
+}
+
+#tools .tools-left span i,
+#tools .tools-right span i {
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+#tools .tools-left span i:hover,
+#tools .tools-right span i:hover {
+  background-color: #171313;
+  color: #fff;
+}
+
+.tools-left h4,
+.tools-right h4 {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.tools-left > p,
+.tools-right > p {
+  font-size: 32px;
+}
+
+.tools-right h5 {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.tools-right h2 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.tools-right h2:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/*                             footer                           */
+#footer {
+  background-color: rgb(255, 208, 213);
+  padding: 3rem 5%;
+  padding-bottom: 15rem;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  font-size: 24px;
+}
+
+#footer .md {
+  display: flex;
+  justify-content: space-between;
+}
+
+#footer .logo {
+  width: 200px;
+}
+
+#footer .footer-time {
+  list-style: disc;
+}
+
+#footer ul li {
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+#footer .footer-time span {
+  margin-left: 10px;
+}
+
+#footer .footer-sites li:hover,
+#footer .footer-media li:hover {
+  text-decoration: underline;
+}
+
+/*                                                responsive */
+@media screen and (max-width: 1200px) {
+  /*                        header       */
+  #showcase {
+    padding: 2rem 4rem;
+  }
+
+  #showcase .card-wrapper .card {
+    min-height: 80vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+  }
+
+  #showcase .card-wrapper .card img {
+    width: 110%;
+    height: 150%;
+  }
+
+  #showcase .card-wrapper .card h5 {
+    font-size: 14px;
+  }
+
+  #showcase .card-wrapper .card h1 {
+    font-size: 42px;
+    width: 400px;
+  }
+
+  /*                                email */
+  .email-title {
+    width: 700px;
+  }
+
+  .email-title h1 {
+    font-size: 3rem;
+  }
+
+  .email-form {
+    margin-top: 15rem;
+    padding-left: 50%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  /*                        header       */
+  #showcase {
+    padding: 2rem 4rem;
+  }
+
+  #showcase .card-wrapper .card {
+    min-height: 80vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: unset;
+  }
+
+  #showcase .card-wrapper .card .card-left {
+    order: 2;
+    width: 100%;
+    margin-top: 3rem;
+  }
+
+  #showcase .card-wrapper .card img {
+    width: 110%;
+    height: 150%;
+  }
+
+  #showcase .card-wrapper .card h5 {
+    font-size: 14px;
+  }
+
+  #showcase .card-wrapper .card h1 {
+    font-size: 42px;
+    width: 100%;
+  }
+
+  /*                             release                         */
+  #releases .card-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /*                             spotlight                        */
+  #spotlight {
+    padding: 2rem 5%;
+  }
+
+  #spotlight h2 {
+    font-size: 24px;
+  }
+
+  #spotlight h3 {
+    font-size: 18px;
+  }
+
+  .swiper-slide .layer {
+    width: 50%;
+    padding: 0 5px;
+    font-size: 14px;
+  }
+
+  #spotlight .swiper-slide h2 {
+    font-size: 22px;
+  }
+
+  #spotlight .swiper-slide p {
+    font-size: 14px;
+    margin-top: 5px;
+  }
+
+  .swiper-slide:hover .layer {
+    height: 50%;
+  }
+
+  /*                                email                         */
+  section#email {
+    padding: 7rem 15%;
+  }
+
+  .email-title {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .email-title h1 {
+    font-size: 3rem;
+  }
+
+  .email-form {
+    margin-top: 8rem;
+    padding-inline: 18%;
+  }
+
+  .email-form form {
+    border-bottom: 2px solid #fff;
+    padding-bottom: 10px;
+    width: 100%;
+  }
+
+  .email-form form input {
+    font-size: 18px;
+    width: 84%;
+    padding-right: 2rem;
+  }
+
+  .email-form #successMessage {
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  .email-form p.text {
+    font-size: 14px;
+    margin-top: 8rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  /*                              tools                            */
+  #tools {
+    padding: 3rem 5%;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  #tools .card-wrapper {
+    display: flex;
+    margin-top: 1rem;
+  }
+
+  .tools-left > p,
+  .tools-right > p {
+    font-size: 28px;
+  }
+
+  /*                                     footer                    */
+  #footer {
+    padding: 2rem 5%;
+    padding-bottom: 5rem;
+    display: block;
+    font-size: 18px;
+  }
+
+  #footer .md {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+#navbar .fa-solid {
+  display: none;
+}
+@media screen and (max-width: 592px) {
+  /*                        header       */
+  #navbar .fa-solid {
+    display: block;
+    font-size: 25px;
+  }
+
+  .nav-list {
+    position: fixed;
+    top: 0;
+    right: -200px;
+    background-color: #837e7e;
+    width: 200px;
+    height: 100vh;
+    padding-top: 50px;
+    transition: all 0.6s;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+  }
+
+  nav .nav-list li {
+    /* display: block; */
+    margin: 2px;
+  }
+
+  nav .nav-list .fa-solid {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    cursor: pointer;
+  }
+
+  #showcase {
+    padding: 1rem 0;
+  }
+
+  #showcase .card-wrapper .card {
+    min-height: 80vh;
+  }
+
+  #showcase .card-wrapper .card .card-left {
+    margin-top: 1rem;
+  }
+
+  #showcase .card-wrapper .card img {
+    width: 100%;
+    height: 100%;
+  }
+
+  #showcase .card-wrapper .card h5 {
+    font-size: 12px;
+  }
+
+  #showcase .card-wrapper .card h1 {
+    font-size: 28px;
+    width: 100%;
+  }
+
+  /*                           release                       */
+  #releases {
+    padding: 1rem 5%;
+  }
+
+  #releases .card-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  #releases > span {
+    position: absolute;
+    top: 100%;
+    right: 5%;
+  }
+
+  #releases h2 {
+    font-size: 24px;
+    margin-bottom: 1rem;
+  }
+
+  /*                                spotlight                    */
+  #spotlight {
+    padding: 2rem 5%;
+  }
+
+  #spotlight h2 {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  #spotlight h3 {
+    font-size: 14px;
+  }
+
+  #spotlight > span {
+    top: 92%;
+    right: 5%;
+    font-size: 14px;
+  }
+
+  .swiper-slide .layer {
+    display: none;
+  }
+
+  /*                                email                        */
+  section#email {
+    padding: 3rem 5%;
+  }
+
+  .email-title {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .email-title h1 {
+    font-size: 2rem;
+  }
+
+  .email-form {
+    margin-top: 5rem;
+    padding-inline: 5%;
+  }
+
+  .email-form form {
+    border-bottom: 2px solid #fff;
+    padding-bottom: 10px;
+    width: 100%;
+  }
+
+  .email-form form input {
+    font-size: 16px;
+    width: 84%;
+    padding-right: 2rem;
+  }
+
+  .email-form #successMessage {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .email-form p.text {
+    font-size: 12px;
+    margin-top: 8rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  /*                            tools                       */
+  #tools .card-wrapper {
+    display: block;
+    margin-top: 1rem;
+  }
+
+  #tools .card-wrapper .card {
+    margin-block: 1rem;
+  }
+
+  .tools-left > p,
+  .tools-right > p {
+    font-size: 22px;
+  }
+
+  #tools .tools-left h4 {
+    font-size: 18px;
+  }
+
+  #tools .tools-left .card h4 {
+    font-size: 14px;
+  }
+
+  #tools .tools-left .card h3 {
+    font-size: 16px;
+  }
+
+  #tools .tools-left .card p {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  #tools .tools-left span,
+  #tools .tools-right span {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    font-size: 14px;
+  }
+
+  .tools-right h4 {
+    font-size: 24px;
+  }
+
+  .tools-right h5 {
+    font-size: 14px;
+  }
+
+  .tools-right p {
+    font-size: 16px;
+  }
+
+  .tools-right h2 {
+    font-size: 18px;
+  }
+
+  /*                                   footer                        */
+  #footer {
+    padding: 2rem 5%;
+    padding-bottom: 3rem;
+    display: block;
+    font-size: 14px;
+  }
+
+  #footer .md {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+	#footer .md .footer-media {
+		display: none;
+	}
+}
